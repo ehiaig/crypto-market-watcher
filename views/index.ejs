@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/css/vendor/bumble-bee-css/css/root.css'/>
+    <link rel='stylesheet' href='/css/vendor/bumble-bee-css/css/core.css'/>
+    <link rel='stylesheet' href='/css/vendor/bumble-bee-css/css/colors.css'/>
+    <link rel='stylesheet' href='/css/vendor/bumble-bee-css/css/coreBreakDown/table.css'/>
+    <!--<link rel='stylesheet' href='../public/css/vendor/bumble-bee-css/css/core.css' />-->
+
+    <link rel='stylesheet' href='/css/custom.css'/>
+    <!--<script src="https://d3dy5gmtp8yhk7.cloudfront.net/2.1.6/sockjs.min.js" type="text/javascript" async="true"></script>-->
+
+    <style>
+
+    </style>
+</head>
+<body class="ys">
+<div class="h100 w100 m0a rc50p bdr ctr badge bgp-center bgs-con mt30"></div>
+
+<h1 class="ctr pd10 m10">CRYPTO-WATCHER</h1>
+
+<section class="fph ha pdlr10p" id="cryptos-container">
+    <div class="fph fpva pdlr7p">
+        <table class="data-table medium bdr">
+            <thead>
+                <tr>
+                    <th>bitstamp</th>
+                    <th>gdax</th>
+                    <th>bitMex</th>
+                    <th>bittrex</th>
+                    <th>bitfinex</th>
+                    <th>cex</th>
+                    <th>okcoin</th>
+                    <th>poloniex</th>
+                    <th>gemini</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <ul class="classes m20" style="">
+        <template v-for="(exchangeData,index) in exchangeDataArray">
+            <li v-for="(val, key) in exchangeData">
+                <a href="#">
+                <span class="className">
+                    <span class="fn exc-name">{{key}}</span>
+                    <span class="v-divider">|</span>
+                    <span class="fn">(USD) {{ val.price }}</span>
+                    <span v-bind:class="val.change + ' tabIco'"></span>
+                </span>
+                </a>
+            </li>
+        </template>
+
+    </ul>
+</section>
+<div id="bids_placeholder"></div>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<!--<script src="/js/socket.js"></script>-->
+
+<script src="/js/base.min.js"></script>
+<script src="/js/Barge.DomCore.js"></script>
+<script src="/js/Barge.Events.js"></script>
+<script src="/js/Barge.Events.EventType.js"></script>
+<script src="/js/Barge.Dom.TableSorter.js"></script>
+<script src="/js/Barge.Dom.Table.js"></script>
+<script src="/js/Barge.Ajax.js"></script>
+
+<script src="/js/vue.js"></script>
+<script src="/js/vue2-filters.min.js"></script>
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+<!--<script src="https://d3dy5gmtp8yhk7.cloudfront.net/2.1/pusher.min.js"></script>-->
+<script src="/js/crypto.js"></script>
+
+
+
+<script >
+    console.log(<%# ama %>);
+</script>
+</body>
+</html>
